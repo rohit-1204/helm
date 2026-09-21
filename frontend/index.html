@@ -1,1 +1,44 @@
-index
+<!DOCTYPE html>
+<html>
+<head>
+    <title>E-Commerce App</title>
+</head>
+
+<body>
+
+<h1>My E-Commerce Application</h1>
+
+<button onclick="loadProducts()">
+    Load Products
+</button>
+
+<div id="products"></div>
+
+<script>
+
+async function loadProducts() {
+
+    const response = await fetch("/api/products");
+
+    const data = await response.json();
+
+    let html = "";
+
+    data.products.forEach(product => {
+
+        html += `
+            <div>
+                <h3>${product.name}</h3>
+                <p>Price: ₹${product.price}</p>
+            </div>
+        `;
+
+    });
+
+    document.getElementById("products").innerHTML = html;
+}
+
+</script>
+
+</body>
+</html>
