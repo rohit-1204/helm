@@ -1,1 +1,13 @@
-configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+
+metadata:
+  name: ecommerce-config
+
+data:
+
+  ENVIRONMENT: {{ .Values.config.environment | quote }}
+
+  USER_SERVICE_URL: {{ .Values.config.userServiceUrl | quote }}
+
+  PRODUCT_SERVICE_URL: {{ .Values.config.productServiceUrl | quote }}
