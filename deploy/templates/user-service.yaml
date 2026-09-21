@@ -1,1 +1,15 @@
- user-service.yaml
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: user-service
+
+spec:
+  type: ClusterIP
+
+  selector:
+    app: user-service
+
+  ports:
+    - port: 8000
+      targetPort: 80
