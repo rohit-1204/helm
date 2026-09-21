@@ -1,1 +1,11 @@
-Chart.yaml
+apiVersion: v2
+
+name: ecommerce
+
+description: Helm chart for E-Commerce microservices
+
+type: application
+
+version: 1.0.0
+
+appVersion: "1.0"
