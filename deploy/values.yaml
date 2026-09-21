@@ -1,1 +1,45 @@
 
+frontend:
+  replicas: 2
+
+  image:
+    repository: nginx
+    tag: "1.27"
+
+  service:
+    port: 80
+
+
+user:
+  replicas: 2
+
+  image:
+    repository: nginx
+    tag: "1.27"
+
+  service:
+    port: 80
+
+
+product:
+  replicas: 2
+
+  image:
+    repository: nginx
+    tag: "1.27"
+
+  service:
+    port: 80
+
+
+config:
+  environment: development
+
+  userServiceUrl: http://user-service:8000
+
+  productServiceUrl: http://product-service:8000
+
+
+secret:
+  username: admin
+  password: admin123
